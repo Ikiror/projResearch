@@ -185,7 +185,7 @@ Alternative BED file combination
 Pixy Preparation & Statistics (12_*.sh,14.95-14.97_*.sh)
 
 Prepare files for pixy analysis
-Calculate Fst, π, and Tajima's D for 0-fold and 4-fold sites
+Calculate Fst, π, and Tajimas D for 0-fold and 4-fold sites
 
 Step 4: Visualization & Analysis (step4_plotting)
 Purpose: Generate comprehensive figures and calculate π₀/π₄ ratios
@@ -198,7 +198,7 @@ Execution Scripts:
 Metrics Calculated:
 Fst: Population differentiation (low vs high elevation)
 π (nucleotide diversity): Genetic variation within populations
-Tajima's D: Test for selection (±2 thresholds)
+Tajimas D: Test for selection (±2 thresholds)
 π₀/π₄ ratio: Functional vs neutral diversity
 Output: 12-panel comparison figures + CSV tables
 
