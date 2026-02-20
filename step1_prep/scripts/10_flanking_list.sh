@@ -20,7 +20,7 @@ WORKDIR="/data/users/aikiror/researchProject/pipeline"
 OUTPUTDIR="${WORKDIR}/step1_prep/outputFiles/10_flanking_list"
 mkdir -p ${OUTPUTDIR}
 
-FOCAL_GENE_LIST="/biscutellaVariaData/geneCoord.tsv"
+FOCAL_GENE_LIST="$WORKDIR/biscutellaVariaData/geneCoord.tsv"
 FLANKING_GFF_FOLDER="$WORKDIR/step1_prep/outputFiles/6_filter_sorted_gff_for_flanking_genes"
 FLANKING_GFF_FILE=$(ls ${FLANKING_GFF_FOLDER}/filteredGFFfor_VARIA_*.gff | sed -n "${SLURM_ARRAY_TASK_ID}p")
 

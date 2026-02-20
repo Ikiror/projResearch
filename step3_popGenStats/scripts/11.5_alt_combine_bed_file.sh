@@ -33,7 +33,8 @@ cd "${OUTPUTDIR}"
 #combine bed files
 
 #0fold
-OUT_0FOLD="${OUTPUTDIR}/combined_0fold_Bv1-9_scaffold31.bed" > "${OUT_0FOLD}"  # create empty file
+OUT_0FOLD="${OUTPUTDIR}/combined_0fold_Bv1-9_scaffold31.bed" 
+> "${OUT_0FOLD}"  # create empty file
 
 for contig in "${TARGET_CONTIGS[@]}"; do
     bedfile="${BEDFILE_0FOLD}/${contig}.bed"

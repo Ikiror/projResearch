@@ -33,10 +33,10 @@ BED_4FOLD="${WORKDIR}/step3_popGenStats/outputFiles/11.5_alt_combine_bed_file/co
 ACTUAL_GENE_BOUNDARY_LIST="${WORKDIR}/biscutellaVariaData/geneCoord.tsv"
 
 #table with geneic region w flanks start and end info
-GENEIC_REGION_BOUNDARY_LIST="${WORKDIR}/step3_coveragePlots/output/05_sampleList_2genes_flank/flanking_2genes_left_right_list.tsv"
+GENEIC_REGION_BOUNDARY_LIST="${WORKDIR}/biscutellaVariaData/flanking_2genes_gene_coords.tsv"
 
 #flanking list for varia of interest -> list of genes in window
-FLANKING_DIR="${WORKDIR}/biscutellaVariaData/flanking_2genes_gene_coords.tsv"
+FLANKINGGENES_LIST="${WORKDIR}/biscutellaVariaData/flanking_2genes_gene_coords.tsv"
 
 
 #coverage dir
@@ -44,7 +44,7 @@ COVERAGE_DIR="${WORKDIR}/step2_calcCoverageDepth/outputFiles/1_samtools_depth_pe
 
 #build list of flanking files (adjust pattern if needed)
 # e.g. flanking_list_for_VARIA_0007106.tsv, flanking_list_for_VARIA_XXXXXXX.tsv
-mapfile -t FLANK_FILES < <(ls -1 "${FLANKING_DIR}"/flanking_list_for_VARIA_*.tsv | sort)
+mapfile -t FLANK_FILES < <(ls -1 "${FLANKINGGENES_LIST}"/flanking_list_for_VARIA_*.tsv | sort)
 
 #pick file for this array task
 FLANKING_FILE="${FLANK_FILES[$SLURM_ARRAY_TASK_ID]}"
@@ -52,7 +52,7 @@ FLANKING_FILE="${FLANK_FILES[$SLURM_ARRAY_TASK_ID]}"
 # Safety checks
 if [[ -z "${FLANKING_FILE}" ]]; then
   echo "ERROR: No file for SLURM_ARRAY_TASK_ID=${SLURM_ARRAY_TASK_ID}"
-  echo "Counted ${#FLANK_FILES[@]} files in ${FLANKING_DIR}"
+  echo "Counted ${#FLANK_FILES[@]} files in ${FLANKINGGENES_LIST}"
   exit 1
 fi
 

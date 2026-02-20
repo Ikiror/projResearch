@@ -14,9 +14,10 @@
 #option to add #SBATCH --mail-user=youremailaddress, SBATCH --mail-type=begin,end,fail
 
 
-WORKDIR="/data/users/aikiror/researchProject"
+WORKDIR="/data/users/aikiror/researchProject/pipeline"
 RSCRIPT="${WORKDIR}/step4_plotting/scripts/1_piawka_R_visualization_w_boxplots.R"
 
+#SET BEFORE RUNNING
 #path to flanking file to run
 # e.g. flanking_list_for_VARIA_0007106.tsv, flanking_list_for_VARIA_XXXXXXX.tsv
 FLANKING_FILE=""
@@ -37,7 +38,7 @@ BED_4FOLD="${WORKDIR}/step3_popGenStats/outputFiles/11.5_alt_combine_bed_file/co
 ACTUAL_GENE_BOUNDARY_LIST="${WORKDIR}/biscutellaVariaData/geneCoord.tsv"
 
 #table with geneic region w flanks start and end info
-GENEIC_REGION_BOUNDARY_LIST="${WORKDIR}/step3_coveragePlots/output/05_sampleList_2genes_flank/flanking_2genes_left_right_list.tsv"
+GENEIC_REGION_BOUNDARY_LIST="${WORKDIR}/biscutellaVariaData/flanking_2genes_gene_coords.tsv"
 
 
 #coverage dir

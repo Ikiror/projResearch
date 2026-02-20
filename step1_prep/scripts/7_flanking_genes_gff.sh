@@ -43,5 +43,3 @@ done
 
 echo "Done: written to $OUTFILE"
 
-#copy file into additional directory
-cp $OUTFILE $SECONDARY_OUTDIR/$OUTFILE

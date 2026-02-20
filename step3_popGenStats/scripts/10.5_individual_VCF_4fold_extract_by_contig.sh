@@ -1,6 +1,7 @@
 #!/bin/bash
 #SBATCH --time=48:00:00                
 #SBATCH --cpus-per-task=4
+#SBATCH --mem=32gb
 #SBATCH --job-name=VCF4foldContig 
 #SBATCH --output=/data/users/aikiror/researchProject/pipeline/step3_popGenStats/logFiles/10.5_individual_VCF_4fold_extract_by_contig/output_%J.o
 #SBATCH --error=/data/users/aikiror/researchProject/pipeline/step3_popGenStats/logFiles/10.5_individual_VCF_4fold_extract_by_contig/error_%J.e
