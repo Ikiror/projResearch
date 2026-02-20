@@ -37,7 +37,7 @@ function printOutput( locus, nSites, pop1, pop2, nUsed, metric, numerator, denom
     print out
   }
 }
-
+```
 
 pipeline/
 ├── step1_prep/                          # Data preparation pipeline
@@ -104,90 +104,79 @@ pipeline/
 └── README.md
 
 
-Pipeline Workflow
-Step 1: Data Preparation (step1_prep/)
+## Pipeline Workflow
+### Step 1: Data Preparation (step1_prep/)
 Purpose: Extract gene coordinates, build reference databases, identify gene windows
 
-Filter & Sort GFF (1-2_*.sh)
+#### Filter & Sort GFF (1-2_*.sh)
 
 Extract gene features from annotation
 Sort by scaffold and genomic position
 
-
-Gene Identification (3-4_*.sh)
+#### Gene Identification (3-4_*.sh)
 
 Match genes to protein IDs
 Generate coordinate lists
 
-
-Reference Setup (5_*.sh, 9_*.sh)
+#### Reference Setup (5_*.sh, 9_*.sh)
 
 Index FASTA file
 Build BLAST database
 
-
-Gene Window Definition (6-8_*.sh, 10_*.sh)
+#### Gene Window Definition (6-8_*.sh, 10_*.sh)
 
 Extract focal gene ±2 flanking genes (5-gene windows)
 Create coordinate lists for local genomic context
 
-
-Sequence Alignment (11_*.sh, 11_*.R)
+#### Sequence Alignment (11_*.sh, 11_*.R)
 
 BLAST alignment within gene windows
 Visualization of genomic context
 
-
-Step 2: Coverage Analysis (step2_calcCoverageDepth/)
+### Step 2: Coverage Analysis (step2_calcCoverageDepth/)
 Purpose: Calculate sequencing depth across gene regions
 
 0.5: Index BAM files
 1: Calculate depth per region using samtools
 
-Step 3: Population Genetics Statistics (step3_popGenStats/)
+### Step 3: Population Genetics Statistics (step3_popGenStats/)
 Purpose: Extract variants, classify degeneracy, calculate statistics
 Workflow:
 
-VCF Preparation (01-01pt5_*.sh)
+#### VCF Preparation (01-01pt5_*.sh)
 
 Filter and index VCF files
 
-
-Degeneracy Classification (02-03_*.sh)
+#### Degeneracy Classification (02-03_*.sh)
 
 Extract 0-fold (nonsynonymous) sites
 Extract 4-fold (synonymous) sites
 
-
-Reference Files (04_*.sh)
+#### Reference Files (04_*.sh)
 
 Create sequence dictionary
 
-
-VCF Extraction (05-06_*.sh)
+#### VCF Extraction (05-06_*.sh)
 
 Extract variants at 0-fold sites
 Extract variants at 4-fold sites
 
-
-Contig-Level Processing (07-10.5_*.sh)
+#### Contig-Level Processing (07-10.5_*.sh)
 
 Generate BED files by contig
 Extract VCF data by contig for both degeneracy classes
 
-
-File Consolidation (11-11.5_*.sh)
+#### File Consolidation (11-11.5_*.sh)
 
 Combine VCF files
 Alternative BED file combination
 
-
-Pixy Preparation & Statistics (12_*.sh,14.95-14.97_*.sh)
+#### Pixy Preparation & Statistics (12_*.sh,14.95-14.97_*.sh)
 
 Prepare files for pixy analysis
 Calculate Fst, π, and Tajimas D for 0-fold and 4-fold sites
 
-Step 4: Visualization & Analysis (step4_plotting)
+### Step 4: Visualization & Analysis (step4_plotting)
 Purpose: Generate comprehensive figures and calculate π₀/π₄ ratios
 
 Main Script: 1_piawka_R_visualization_w_boxplots.R
