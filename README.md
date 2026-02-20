@@ -138,7 +138,6 @@ BLAST alignment within gene windows
 Visualization of genomic context
 
 
-
 Step 2: Coverage Analysis (step2_calcCoverageDepth/)
 Purpose: Calculate sequencing depth across gene regions
 
@@ -183,28 +182,24 @@ Combine VCF files
 Alternative BED file combination
 
 
-Pixy Preparation & Statistics (12_*.sh, 14.95-14.97_*.sh)
+Pixy Preparation & Statistics (12_*.sh,14.95-14.97_*.sh)
 
 Prepare files for pixy analysis
 Calculate Fst, π, and Tajima's D for 0-fold and 4-fold sites
 
-
-
-Step 4: Visualization & Analysis (step4_plotting/)
+Step 4: Visualization & Analysis (step4_plotting)
 Purpose: Generate comprehensive figures and calculate π₀/π₄ ratios
+
 Main Script: 1_piawka_R_visualization_w_boxplots.R
 Execution Scripts:
-
 1_single_run_1_piawka_R_visualization_w_boxplots.sh - Single gene
 1_multirun_piawka_R_visualization_w_boxplots.sh - Batch processing
 
 Metrics Calculated:
-
 Fst: Population differentiation (low vs high elevation)
 π (nucleotide diversity): Genetic variation within populations
 Tajima's D: Test for selection (±2 thresholds)
 π₀/π₄ ratio: Functional vs neutral diversity
-
 Output: 12-panel comparison figures + CSV tables
 
 Input Files (description and format)
